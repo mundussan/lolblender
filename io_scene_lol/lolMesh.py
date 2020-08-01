@@ -18,6 +18,7 @@
 # <pep8 compliant>
 #from collections import UserDict
 import struct
+from collections import OrderedDict
 testFile = '/var/tmp/downloads/lol/Wolfman/Wolfman.skn'
     
 class sknHeader():
@@ -481,7 +482,7 @@ def exportSKN(meshObj, output_filepath, input_filepath, BASE_ON_IMPORT, VERSION)
     containsVertexColor = ('lolVertexColor' in meshObj.data.vertex_colors) and ('lolVertexColorAlpha' in meshObj.data.vertex_colors)
     
     #Build vertex data lists and dictionary of vertex-uv pairs
-    vertexUvs = {}
+    vertexUvs = OrderedDict()
     vertices = []
     vertexNormals = []
     vertexWeights = []

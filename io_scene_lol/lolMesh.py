@@ -350,16 +350,16 @@ def buildMesh(filepath,header, materials, metaData, indices, vertices):
 
     if metaData.containsVertexColor:
         #Create vertex color layer
-        obj.data.vertex_colors.new("lolVertexColor")
+        obj.data.vertex_colors.new(name="lolVertexColor")
         vertColorLayer = obj.data.vertex_colors[-1]
         for k, loop in enumerate(obj.data.loops):
             vertIndex = loop.vertex_index
-            vertColorLayer.data[k].color = vertices[vertIndex].vertexColor[0:3]
-        obj.data.vertex_colors.new("lolVertexColorAlpha")
+            vertColorLayer.data[k].color = vertices[vertIndex].vertexColor[0:4]
+        obj.data.vertex_colors.new(name="lolVertexColorAlpha")
         vertColorAlphaLayer = obj.data.vertex_colors[-1]
         for k, loop in enumerate(obj.data.loops):
             alphaValue = vertices[loop.vertex_index].vertexColor[3]
-            vertColorAlphaLayer.data[k].color = (alphaValue, 0.0, 0.0)
+            vertColorAlphaLayer.data[k].color = (alphaValue, 0.0, 0.0, 0.0)
     
     #Create UV texture coords
     texList = []

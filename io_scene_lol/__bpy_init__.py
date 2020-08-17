@@ -18,10 +18,13 @@
 # <pep8 compliant>
 
 import bpy
+import os
+import bpy.utils.previews
 from bpy import props
 from bpy_extras.io_utils import ImportHelper, ExportHelper
 from . import lolMesh, lolSkeleton, lolAnimation
 from os import path
+
 
 __bpydoc__="""
 Import/Export a League of Legends character model, including
@@ -413,17 +416,27 @@ def export_sco(filepath):
     return {'FINISHED'}
 
 def menu_func_import(self, context):
-    self.layout.operator(IMPORT_OT_lol.bl_idname, text='League of Legends Character (.skn;.skl)')
-    self.layout.operator(IMPORT_OT_lolanm.bl_idname, text='League of Legends Animation(.anm)')
-    self.layout.operator(IMPORT_OT_sco.bl_idname, text='League of Legends Particle (.sco)')
+    self.layout.operator(IMPORT_OT_lol.bl_idname, text='League of Legends Character (.skn;.skl)', icon_value = custom_icons["lol_import"].icon_id)
+    self.layout.operator(IMPORT_OT_lolanm.bl_idname, text='League of Legends Animation(.anm)', icon_value = custom_icons["lol_import"].icon_id)
+    self.layout.operator(IMPORT_OT_sco.bl_idname, text='League of Legends Particle (.sco)', icon_value = custom_icons["lol_import"].icon_id)
 
 def menu_func_export(self, context):
-    self.layout.operator(EXPORT_OT_lol.bl_idname, text="League of Legends (.skn)")
-    self.layout.operator(EXPORT_OT_skl.bl_idname, text="League of Legends Skeleton (.skl)")
-    self.layout.operator(EXPORT_OT_lolanm.bl_idname, text="League of Legends Animation(.anm)")
-    self.layout.operator(EXPORT_OT_sco.bl_idname, text="League of Legends Particle (.sco)")
+    self.layout.operator(EXPORT_OT_lol.bl_idname, text="League of Legends (.skn)", icon_value = custom_icons["lol_export"].icon_id)
+    self.layout.operator(EXPORT_OT_skl.bl_idname, text="League of Legends Skeleton (.skl)", icon_value = custom_icons["lol_export"].icon_id)
+    self.layout.operator(EXPORT_OT_lolanm.bl_idname, text="League of Legends Animation(.anm)", icon_value = custom_icons["lol_export"].icon_id)
+    self.layout.operator(EXPORT_OT_sco.bl_idname, text="League of Legends Particle (.sco)", icon_value = custom_icons["lol_export"].icon_id)
+
+# Global icons to store icons
+custom_icons = None
 
 def register():
+    # Register Custom Icons
+    global custom_icons
+    custom_icons = bpy.utils.previews.new()
+    icons_dir = os.path.join(os.path.dirname(__file__), "icons")
+    custom_icons.load("lol_import", os.path.join(icons_dir, "import.png"), 'IMAGE')
+    custom_icons.load("lol_export", os.path.join(icons_dir, "export.png"), 'IMAGE')
+
     bpy.utils.register_class(IMPORT_OT_lol)
     bpy.utils.register_class(IMPORT_OT_lolanm)
     bpy.utils.register_class(IMPORT_OT_sco)
@@ -436,6 +449,10 @@ def register():
     bpy.types.TOPBAR_MT_file_export.append(menu_func_export)
 
 def unregister():
+    # Register Custom Icons
+    global custom_icons
+    bpy.utils.previews.remove(custom_icons)
+
     bpy.utils.unregister_class(IMPORT_OT_lol)
     bpy.utils.unregister_class(IMPORT_OT_lolanm)
     bpy.utils.unregister_class(IMPORT_OT_sco)

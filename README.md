@@ -1,15 +1,20 @@
-**Note: I am no longer maintaining the code within this repository. It will likely not work on newer versions of Blender, and the instructions below may no longer function correctly.**
-
-**If you are a developer that wants to maintain this plugin, notify me and I will update this note, redirecting users to your repo.**
-
-# lolblender
-
+# lolBlender
 Python addon to use League of Legends files into blender, a 3d-modeling software.
+
+# Note
+
+**This repository is now maintained and currently supports the latest version of Blender and I am currently working on the latest versions for the skin files**
+
+last Update : Yone Release
+
+~~**Note: I am no longer maintaining the code within this repository. It will likely not work on newer versions of Blender, and the instructions below may no longer function correctly.**~~
+
+~~**If you are a developer that wants to maintain this plugin, notify me and I will update this note, redirecting users to your repo.**~~
 
 
 
 # History
-This project has been imported into GitHub in order to update it to the latest Blender version (2.74, should be compatible with 2.7x), available at [blender.org](http://www.blender.org/), and update it to be compatible with newer versions of League of Legends .SKN, .SKL, and other related files.
+This project was originally imported into GitHub in order to update it to Blender version 2.7X, available at [blender.org](http://www.blender.org/), and update it to be compatible with newer versions of League of Legends .SKN, .SKL, and other related files.
 
 The latest commit to the trunk as of exporting can be found [here](https://github.com/lispascal/lolblender/commit/b45817c764f6fa6423bcb67e9ed1b649f6bae405), and browsed [here](https://github.com/lispascal/lolblender/tree/b45817c764f6fa6423bcb67e9ed1b649f6bae405). The latest code is probably in those Trunk and Branch folders. These contain work exclusively by Zac Berkowitz, who maintained the repository on Google Code. That code was made for Blender 2.5
 

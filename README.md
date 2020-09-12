@@ -1,3 +1,8 @@
+#Warning
+This program is soon to become obsolete,Crauzer (https://github.com/Crauzer/) is releasing software that makes skn, skl and anm files more compatible with many 3D software. Until then this repository will be maintained.
+↓↓Crauzer's work↓↓
+https://github.com/Crauzer/lol2gltf
+
 # lolBlender
 Python addon to use League of Legends files into blender, a 3d-modeling software.
 

@@ -1,4 +1,4 @@
-#Warning
+# Warning
 This program is soon to become obsolete,Crauzer (https://github.com/Crauzer/) is releasing software that makes skn, skl and anm files more compatible with many 3D software. Until then this repository will be maintained.
 ↓↓Crauzer's work↓↓
 https://github.com/Crauzer/lol2gltf

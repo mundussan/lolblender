@@ -39,10 +39,10 @@ Daily builds:      http://www.graphicall.org
 To install, copy the io_scene_lol folder and contents
 to the scripts/addons directory of your blender install.
 
-blender/2.74/scripts/addons
+blender/2.90/scripts/addons
 
 Open up Blender's user preferences
-![Position of User Preferences](http://imgur.com/b8Wv4.png)
+![Position of User Preferences](https://i.imgur.com/awFMhoj.png)
 
 and select 'Addons', then 'Import/Export'.  Find the League of Legends addon and click the small box to the right to enable it.  If you want this addon to load upon starting Blender, click 'Save as Default', otherwise just close the window.
 

@@ -449,7 +449,7 @@ def addDefaultWeights(boneList, sknVertices, armatureObj, meshObj):
     We will create a vertex group for each bone using their index number
     '''
 
-    for id, bone in     (boneList):
+    for id, bone in enumerate(boneList):
         meshObj.vertex_groups.new(name=bone.name)
 
     '''

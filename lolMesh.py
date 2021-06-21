@@ -432,6 +432,10 @@ def buildMesh(filepath,header, materials, metaData, indices, vertices):
 
     #set active
     obj.select_set(True)
+    bpy.ops.object.mode_set(mode='EDIT')
+    bpy.ops.mesh.select_all(action='SELECT')
+    bpy.ops.mesh.flip_normals()
+    bpy.ops.object.mode_set(mode='OBJECT')
 
     return {'FINISHED'}
     

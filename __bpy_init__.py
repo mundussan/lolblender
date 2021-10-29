@@ -575,34 +575,3 @@ def unregister():
     bpy.utils.unregister_class(EXPORT_OT_lolanm)
     bpy.utils.unregister_class(EXPORT_OT_sco)
     bpy.types.TOPBAR_MT_file_export.remove(menu_func_export)
-
-
-# def test_anm():
-#     base_dir = "C:\\Users\\Tath\\Downloads\\New folder\\DATA\\Characters\\Annie\\"
-#     skn = "Annie.skn"
-#     skl = "Annie.skl"
-#     anm_dir = base_dir + "animations\\"
-#     anm = "annie_channel.anm"
-
-#     skn_path = base_dir + skn
-#     skl_path = base_dir + skl
-#     anm_path = anm_dir + anm
-
-#     skl_header, skl_bone_list, reordered_bone_list = lolSkeleton.importSKL(skl_path)
-#     anm_header, anm_bone_list = lolAnimation.importANM(anm_path)
-
-#     import_char(MODEL_DIR=base_dir, SKN_FILE=skn, SKL_FILE=skl, DDS_FILE="",
-#             CLEAR_SCENE=True, APPLY_WEIGHTS=True, APPLY_TEXTURE=False)
-#     import_animation(MODEL_DIR=anm_dir, ANM_FILE=anm)
-
-#     boneCheckList = ['r_hand']
-#     for bone in skl_bone_list:
-#         print("SKL bone: %r" % bone.name)
-#         if bone.name.lower() in boneCheckList:
-#             print("p: %s" % bone.matrix[3::4])
-#     for bone in anm_bone_list:
-#         if bone.name.lower() in boneCheckList:
-#             print("ANM bone: %s" % bone.name)
-#             for f in range(0, anm_header.numFrames):
-#                 print("p: %s" % bone.get_frame(f)[0])
-
